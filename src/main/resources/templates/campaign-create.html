@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create campaign</title>
+</head>
+<body>
+<form th:action="@{/campaign-create}" method="post" th:object="${campaignForm}">
+    <label for="name">Name: </label>
+    <input type="text" th:field="*{name}" id="Name" placeholder="Name">
+    <label for="startDate">From date: </label>
+    <input type="date" th:field="*{startDate}" id="startDate">
+    <p></p>
+    <label for="products">Products: </label>
+    <select th:field="*{promotedProducts}" id="products" multiple >
+        <option th:value="${product.serialNumber}" th:each="product : ${products}" th:text=${product.title}></option>
+    </select>
+    <label for="bid">Bid: </label>
+    <input type="number" th:field="*{bid}" id="bid" placeholder="0">
+    <input type="submit" value="Create Campaign"></input>
+</form>
+</body>
+</html>
