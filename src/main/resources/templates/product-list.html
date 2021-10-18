@@ -24,8 +24,6 @@
                 <td th:text="${product.title}"></td>
                 <td th:text="${product.category}"></td>
                 <td th:text="${product.price}"></td>
-                <td><a th:href="@{product-update/{id}(id=${product.serialNumber})}")>Edit</a></td>
-                <td><a th:href="@{product-delete/{id}(id=${product.serialNumber})}")>Delete</a></td>
             </tr>
             </tbody>
         </table>
